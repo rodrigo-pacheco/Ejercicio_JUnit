@@ -14,6 +14,9 @@ public class Union {
 	 */
 	
 	public static Vector union (Vector a, Vector b) {
+		if(a == null || b == null){
+			throw new NullPointerException();
+		}
 		Vector vect = new Vector();
 			for(Object e : a) {
 				vect.add(e);

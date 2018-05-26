@@ -51,9 +51,17 @@ public class UnionTest {
 	}
 	
 	@Test
+	public void testVacio() {
+		a.add(1);
+		c.add(1);
+		assertTrue("Fallo al unir vectores con b vacío", b.equals(Union.union(a, b)));
+	}
+	
+	@Test
 	public void testNull() {
 		a.add(1);
+		b = null;
 		c.add(2);
-		assertTrue("Fallo al unir vectores", b.equals(Union.union(a, b)));
+		Union.union(a, b);
 	}
 }
