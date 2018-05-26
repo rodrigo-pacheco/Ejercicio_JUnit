@@ -52,8 +52,6 @@ public class UnionTest {
 	
 	@Test
 	public void testVacio() {
-		a.add(1);
-		c.add(1);
 		assertTrue("Fallo al unir vectores con b vacío", b.equals(Union.union(a, b)));
 	}
 	
@@ -63,5 +61,15 @@ public class UnionTest {
 		b = null;
 		c.add(2);
 		Union.union(a, b);
+	}
+	
+	@Test
+	public void testElementosRepetidos() {
+		a.add(1);
+		b.add(1);
+		b.add(2);
+		c.add(1);
+		c.add(2);
+		assertTrue("Deja elementos repetidos", c.equals(Union.unionSet(a, b)));
 	}
 }
