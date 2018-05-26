@@ -1,4 +1,5 @@
 import java.util.*;
+import java.lang.NullPointerException;
 
 public class Union {
 	/**
@@ -13,18 +14,23 @@ public class Union {
 	 * @throws	NullPointerException If a or b is null
 	 */
 	
-	public static Vector union (Vector a, Vector b) {
-		public static Set unionSet (Set a, Set b) {
-			if (a == null || b == null) {
-				throw new NullPointerException();
-			}
-			Set set = new HashSet();
-			for(Object e : a) {
-				set.add(e);
-			}
-			for(Object e : b) {
-				set.add(e);
-			}
-			return (Set) set;
+
+	public static Vector union (Vector a, Vector b){
+		
+		if (a == null || b == null) {
+			throw new NullPointerException();
 		}
+		Vector vect = new Vector();
+		for(Object e : a) {
+			if (!vect.contains(e)){
+				vect.add(e);
+			}
+		}
+		for(Object e : b) {
+			if (!vect.contains(e)){
+				vect.add(e);
+			}
+		}
+		return vect;
 	}
+}
