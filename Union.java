@@ -14,16 +14,17 @@ public class Union {
 	 */
 	
 	public static Vector union (Vector a, Vector b) {
-		if (a == null || b == null) {
-			throw new NullPointerException();
-		}
-		Vector vect = new Vector();
+		public static Set unionSet (Set a, Set b) {
+			if (a == null || b == null) {
+				throw new NullPointerException();
+			}
+			Set set = new HashSet();
 			for(Object e : a) {
-				vect.add(e);
+				set.add(e);
 			}
 			for(Object e : b) {
-				vect.add(e);
+				set.add(e);
 			}
-		return vect;
+			return (Set) set;
+		}
 	}
-}
