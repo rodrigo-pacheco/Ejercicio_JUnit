@@ -49,4 +49,11 @@ public class UnionTest {
 		c.add(4);
 		assertTrue("Fallo al unir vectores", c.equals(Union.union(a, b)));
 	}
+	
+	@Test
+	public void testNull() {
+		a.add(1);
+		c.add(2);
+		assertTrue("Fallo al unir vectores", b.equals(Union.union(a, b)));
+	}
 }
