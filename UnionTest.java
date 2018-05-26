@@ -72,4 +72,15 @@ public class UnionTest {
 		c.add(2);
 		assertTrue("Deja elementos repetidos", c.equals(Union.unionSet(a, b)));
 	}
+	
+	@Test
+	public void testDistintosTiposDeDatos() {
+		a.add(1);
+		b.add('a');
+		a.add('a');
+		c.add(1);
+		c.add('a');
+		assertTrue("No funciona con distintos tipos de datos", c.equals(Union.union(a, b)));
+	}
+	
 }
