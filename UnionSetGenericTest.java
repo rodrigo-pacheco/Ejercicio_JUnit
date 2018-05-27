@@ -8,11 +8,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class UnionSetTest {
+public class UnionSetGenericTest {
 	
-	Set a;
-	Set b;
-	Set c;
+	Set<Integer> a;
+	Set<Integer> b;
+	Set<Integer> c;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -27,4 +27,12 @@ public class UnionSetTest {
 		b = null;
 		c = null;
 	}
+	
+	@Test (expected = NullPointerException.class)
+	public void testListaNull() {
+		a = null;
+		Union.<Integer>unionSetGeneric(a, b);
+	}
+	
+	
 }
