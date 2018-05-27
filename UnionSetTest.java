@@ -10,8 +10,8 @@ import org.junit.Test;
 
 public class UnionSetTest {
 	
-	Set a;
-	Set b;
+	Set<Comparable> a;
+	Set<Character> b;
 	Set c;
 	
 	@Before
@@ -39,5 +39,14 @@ public class UnionSetTest {
 		assertTrue("Fallo al unir Sets vacios", c.equals(Union.unionSet(a, b)));
 	}
 	
+	@Test
+	public void testDistintosTipos() {
+		a.add(1);
+		b.add('a');
+		a.add('a');
+		c.add(1);
+		c.add('a');
+		assertTrue("Distintos tipos de datos", c.equals(Union.unionSet(a, b)));
+	}
 	
 }
