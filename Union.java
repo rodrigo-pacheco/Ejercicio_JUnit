@@ -43,7 +43,10 @@ public class Union {
 	 *			contain repeated elements
 	 * @throws	NullPointerException If a or b is null
 	 */
-	/**public static Set unionSet (Set a, Set b) {
-		return a
-	}*/
+	public static Set unionSet (Set a, Set b) {
+		if (a == null || b == null) {
+			throw new NullPointerException();
+		}
+		return a;
+	}
 }
