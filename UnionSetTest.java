@@ -61,7 +61,17 @@ public class UnionSetTest {
 		c.add(3);
 		c.add(4);
 		assertTrue("Fallo al unir sets con mas de un elemento", c.equals(Union.unionSet(a, b)));
-	}	
+	}
+	
+	@Test
+	public void testRepetidos() {
+		a.add(1);
+		b.add(1);
+		b.add(2);
+		c.add(1);
+		c.add(2);
+		assertTrue("Elementos repetidos", c.equals(Union.unionSet(a, b)));
+	}
 
 	
 }
