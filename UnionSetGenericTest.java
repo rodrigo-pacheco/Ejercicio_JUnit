@@ -66,4 +66,9 @@ public class UnionSetGenericTest {
 		c.add(1);
 		assertTrue("Nulls en las listas", c.equals(Union.<Integer>unionSetGeneric(a, b)));
 	}
+	
+	@Test
+	public void testListasVacias() {
+		assertTrue("Sets vacios", c.equals(Union.<Integer>unionSetGeneric(a, b)));
+	}
 }
