@@ -34,5 +34,16 @@ public class UnionSetGenericTest {
 		Union.<Integer>unionSetGeneric(a, b);
 	}
 	
-	
+	@Test
+	public void testHappyPath() {
+		a.add(1);
+		a.add(2);
+		b.add(3);
+		b.add(4);
+		c.add(1);
+		c.add(2);
+		c.add(3);
+		c.add(4);
+		assertTrue("Fallo al unir sets con mas de un elemento", c.equals(Union.<Integer>unionSetGeneric(a, b)));
+	}
 }
