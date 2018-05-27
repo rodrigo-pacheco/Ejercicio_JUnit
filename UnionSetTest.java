@@ -10,8 +10,8 @@ import org.junit.Test;
 
 public class UnionSetTest {
 	
-	Set<Comparable> a;
-	Set<Character> b;
+	Set a;
+	Set b;
 	Set c;
 	
 	@Before
@@ -48,5 +48,20 @@ public class UnionSetTest {
 		c.add('a');
 		assertTrue("Distintos tipos de datos", c.equals(Union.unionSet(a, b)));
 	}
+	
+
+	@Test
+	public void testHappyPath() {
+		a.add(1);
+		a.add(2);
+		b.add(3);
+		b.add(4);
+		c.add(1);
+		c.add(2);
+		c.add(3);
+		c.add(4);
+		assertTrue("Fallo al unir sets con mas de un elemento", c.equals(Union.unionSet(a, b)));
+	}	
+
 	
 }
