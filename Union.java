@@ -71,6 +71,13 @@ public class Union {
 		if (a == null || b == null) {
 			throw new NullPointerException();
 		}
-		return (Set) a;
+		Set<E> set = new HashSet<E>();
+		for(Object e : a) {
+			set.add((E) e);
+		}
+		for(Object e : b) {
+			set.add((E) e);
+		}
+		return (Set) set;
 	}
 }
