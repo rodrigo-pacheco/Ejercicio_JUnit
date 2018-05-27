@@ -1,19 +1,22 @@
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Vector;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 
 public class UnionSetTest {
 	
-	Vector a;
-	Vector b;
-	Vector c;
+	Set a;
+	Set b;
+	Set c;
 	
 	@Before
 	public void setUp() throws Exception {
-		a = new Vector();
-		b = new Vector();
-		c = new Vector();
+		a = new HashSet();
+		b = new HashSet();
+		c = new HashSet();
 	}
 
 	@After
@@ -21,5 +24,11 @@ public class UnionSetTest {
 		a = null;
 		b = null;
 		c = null;
+	}
+	
+	@Test (expected = NullPointerException.class)
+	public void TestNull(){
+		a = null;
+		Union.unionSet(a,b);
 	}
 }
