@@ -1,3 +1,5 @@
+import static org.junit.Assert.assertTrue;
+
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Vector;
@@ -31,4 +33,11 @@ public class UnionSetTest {
 		a = null;
 		Union.unionSet(a,b);
 	}
+	
+	@Test
+	public void TestSetVacio(){
+		assertTrue("Fallo al unir Sets vacios", c.equals(Union.unionSet(a, b)));
+	}
+	
+	
 }
