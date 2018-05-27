@@ -73,5 +73,15 @@ public class UnionSetTest {
 		assertTrue("Elementos repetidos", c.equals(Union.unionSet(a, b)));
 	}
 
+	@Test
+	public void testElementosNull() {
+		a.add(null);
+		b.add(1);
+		b.add(null);
+		c.add(null);
+		c.add(1);
+		assertTrue("Elementos nulls en las listas", c.equals(Union.unionSet(a, b)));
+	}
+	
 	
 }
